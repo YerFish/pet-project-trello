@@ -1,0 +1,147 @@
+@font-face {
+    font-family: 'Inter';
+    src: local('Inter'),
+        url(../fonts/Inter/Inter-V.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.842);
+}
+
+h1 {
+    /* импортировать шрифты */
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.78px;
+}
+
+p {
+    color: #172B4D;
+    font-family: "Inter";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+}
+
+.div-container-card {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    height: 282px;
+    width: 330px;
+    /* закругление немножко отличается на боковых стенках */
+    border-radius: 9px;
+    border-bottom: solid 4px #B2B8C4;
+    margin: 20px 0;
+    padding:10px;
+    width: 94%;
+    /* хули высота не настраивается???? */
+    /* потому что самый верхний элемент на странице */
+    padding: 10px;
+    justify-content: space-between;
+
+}
+
+.img-top {
+    width: 310px;
+    height: 120px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.div-at-a-glance {
+    height: 22px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.p-class-description {
+    width: 70%;
+    height: 32px;
+}
+
+.div-more-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-calendar {
+    margin-right: 10px;
+}
+
+.div-due-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 130px;
+    flex-shrink: 0;
+}
+
+.p-date {
+    color: #6D798E;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.div-assigned-to {
+    display: flex;
+}
+
+.profile1 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    left: 19px;
+    z-index: 0;
+}
+
+.profile2 {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    left: 3px;
+    z-index: 1;
+}
+
+.div-progress {
+    /* сделать чтобы передавалась цифра-переменная и длина бара изменялась */
+    width: 100%;
+    background-color: #02C39A;
+    height: 10px;
+    height: 6px;
+    border-radius: 4px;
+}
+.div-container-note {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    border-radius: 9px;
+    margin: 20px 0;
+    padding: 10px;
+}
+.list {
+    margin: 15px 0 0 24px;
+}
