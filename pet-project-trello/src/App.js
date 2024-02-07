@@ -24,7 +24,7 @@ class App extends Component {
         </a>
       </header> */}
       <Home></Home>
-      <Task />
+      {/* <Task /> */}
       
     </div>
   );

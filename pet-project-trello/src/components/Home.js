@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 
 import calendar from "../img/calendar_icon.svg";
 
+import profile_1 from "../img/profile_01.svg";
+import profile_2 from "../img/profile_02.svg"; //картинки профилей, хочу чтобы адреса на них тоже приходили с сервера
+
 export default class Home extends Component {
 
     constructor() {
@@ -13,9 +16,9 @@ export default class Home extends Component {
     }
 
     buildList = (data) => {
-        let dataMassive = data.data.map((item) => item)
-        console.log(dataMassive, null, '/t');
-        this.setState({ list: dataMassive })
+        let dataMassive = data.data.map((item) => item) //настраиваем чтобы забиралось из объекта, из объекта, из массива  
+        console.log(dataMassive, null, '/t'); //смотрим чё забрали
+        this.setState({ list: dataMassive }) //присваиваем list то что забрали в переменную 2 строчками выше
     }
 
     componentDidMount() {
@@ -26,6 +29,7 @@ export default class Home extends Component {
             .catch(error => console.error('Error: ', error))
     }
 
+    // алгоритм подбора месяца по цифре
     getMonthName = (number) => {
         return {
             "01": 'JAN',
@@ -42,6 +46,14 @@ export default class Home extends Component {
             "12": 'DEC'
         }[number]
 
+    };
+
+    getUserId = (id) => {
+        return {
+            "0": profile_1,
+            "1": profile_2,
+            
+        }[id]
     };
 
     render() {
@@ -76,17 +88,15 @@ export default class Home extends Component {
                                             />
                                             <p className="p-date">{this.getMonthName(item.create_at.substring(5, 7)) + " " + item.create_at.substring(8, 10) + ", " + item.create_at.substring(0, 4)}</p>
                                         </div>
-                                        <div className="div-assigned-to">
-                                            {/* <img
-                                                src={task.profile1}
-                                                className="profile1"
+                                        <div className="div-assigned-to"> 
+                                        {/* можно сделать сункцию которая будет реагировать на количество юзеров в деле и выдавать код для css с нужным позиционированием */}
+                                            <img
+                                                src={this.getUserId(item.user_id)}
+                                                className="profile2"
                                                 alt="person 1"
                                             />
-                                            <img
-                                                src={task.profile2}
-                                                className="profile2"
-                                                alt="person 2"
-                                            /> */}
+                                            
+
                                         </div>
                                     </div>
                                     <div className="div-progress">
@@ -103,7 +113,8 @@ export default class Home extends Component {
                                     </ul>
 
                                 </div>
-                                <li >{item.title + ", " + item.description}</li>
+                                <br />
+                                {/* <li >{item.title + ", " + item.description}</li> */}
                             </div>
 
 
