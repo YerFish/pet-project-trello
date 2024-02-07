@@ -5,6 +5,12 @@ import emoji_reaction from "../img/emoji_reaction.svg";
 import profile_1 from "../img/profile_01.svg";
 import profile_2 from "../img/profile_02.svg";
 
+
+
+
+
+
+
 const tasks = [
   {
     img: image_top,
